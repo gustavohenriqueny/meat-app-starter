@@ -7,7 +7,10 @@ import {ROUTES} from './app.routes';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {HomeComponent} from './components/home/home.component';
-import {AboutComponent} from './components/about/about.component'
+import {AboutComponent} from './components/about/about.component';
+import {RestaurantsComponent} from './components/restaurants/restaurants.component';
+import {RestaurantComponent} from './components/restaurant/restaurant.component';
+import {RestaurantsService} from './services/restaurants.service';
 
 
 @NgModule({
@@ -15,14 +18,18 @@ import {AboutComponent} from './components/about/about.component'
         AppComponent,
         HeaderComponent,
         HomeComponent,
-        AboutComponent
+        AboutComponent,
+        RestaurantsComponent,
+        RestaurantComponent
     ],
     imports: [
         BrowserModule,
         HttpModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [],
+    providers: [
+        RestaurantsService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
