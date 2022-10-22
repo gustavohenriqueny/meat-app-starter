@@ -14,7 +14,7 @@ import {RestaurantsService} from './services/restaurants.service';
 import { RestaurantDetailComponent } from './components/restaurants/restaurant/restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './components/restaurants/restaurant/restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './components/restaurants/restaurant/restaurant-detail/shopping-cart/shopping-cart.component';
-import { MenuItemComponent } from './components/restaurants/restaurant/restaurant-detail/menu-item/menu-item.component';
+import { MenuItemComponent } from './components/restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import { ReviewsComponent } from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 
 
