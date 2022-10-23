@@ -18,6 +18,7 @@ import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import {ShoppingCartService} from './services/shopping-cart.service';
 import { OrderComponent } from './components/order/order.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { OrderComponent } from './components/order/order.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
