@@ -11,36 +11,38 @@ import {AboutComponent} from './components/about/about.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantComponent} from './components/restaurants/restaurant/restaurant.component';
 import {RestaurantsService} from './services/restaurants.service';
-import { RestaurantDetailComponent } from './components/restaurants/restaurant/restaurant-detail/restaurant-detail.component';
-import { MenuComponent } from './components/restaurants/restaurant/restaurant-detail/menu/menu.component';
-import { ShoppingCartComponent } from './components/restaurants/restaurant/restaurant-detail/shopping-cart/shopping-cart.component';
-import { MenuItemComponent } from './components/restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
-import { ReviewsComponent } from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
+import {RestaurantDetailComponent} from './components/restaurants/restaurant/restaurant-detail/restaurant-detail.component';
+import {MenuComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu.component';
+import {ShoppingCartComponent} from './components/restaurants/restaurant/restaurant-detail/shopping-cart/shopping-cart.component';
+import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
+import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
+import {ShoppingCartService} from './services/shopping-cart.service';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        HomeComponent,
-        AboutComponent,
-        RestaurantsComponent,
-        RestaurantComponent,
-        RestaurantDetailComponent,
-        MenuComponent,
-        ShoppingCartComponent,
-        MenuItemComponent,
-        ReviewsComponent
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        RouterModule.forRoot(ROUTES)
-    ],
-    providers: [
-        RestaurantsService
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    AboutComponent,
+    RestaurantsComponent,
+    RestaurantComponent,
+    RestaurantDetailComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    MenuItemComponent,
+    ReviewsComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
+  ],
+  providers: [
+    RestaurantsService,
+    ShoppingCartService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
