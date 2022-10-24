@@ -17,37 +17,37 @@ import {ShoppingCartComponent} from './components/restaurants/restaurant/restaur
 import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import {ShoppingCartService} from './services/shopping-cart.service';
-import { OrderComponent } from './components/order/order.component';
+import {OrderComponent} from './components/order/order.component';
 import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    AboutComponent,
-    RestaurantsComponent,
-    RestaurantComponent,
-    RestaurantDetailComponent,
-    MenuComponent,
-    ShoppingCartComponent,
-    MenuItemComponent,
-    ReviewsComponent,
-    OrderComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule,
-    RouterModule.forRoot(ROUTES)
-  ],
-  providers: [
-    RestaurantsService,
-    ShoppingCartService,
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        AboutComponent,
+        RestaurantsComponent,
+        RestaurantComponent,
+        RestaurantDetailComponent,
+        MenuComponent,
+        ShoppingCartComponent,
+        MenuItemComponent,
+        ReviewsComponent,
+        OrderComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        FormsModule,
+        RouterModule.forRoot(ROUTES)
+    ],
+    providers: [
+        RestaurantsService,
+        ShoppingCartService,
+        {provide: LOCALE_ID, useValue: 'pt-BR'}
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
