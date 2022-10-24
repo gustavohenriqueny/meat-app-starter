@@ -19,6 +19,7 @@ import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-d
 import {ShoppingCartService} from './services/shopping-cart.service';
 import {OrderComponent} from './components/order/order.component';
 import {FormsModule} from '@angular/forms';
+import {InputComponent} from './components/util/input/input.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {FormsModule} from '@angular/forms';
         ShoppingCartComponent,
         MenuItemComponent,
         ReviewsComponent,
-        OrderComponent
+        OrderComponent,
+        InputComponent,
     ],
     imports: [
         BrowserModule,
