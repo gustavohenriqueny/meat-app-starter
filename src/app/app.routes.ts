@@ -8,16 +8,16 @@ import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-d
 import {OrderComponent} from './components/order/order.component';
 
 export const ROUTES: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'restaurants', component: RestaurantsComponent},
-    {
-        path: 'restaurants/:id', component: RestaurantDetailComponent,
-        children: [
-            {path: '', redirectTo: 'menu', pathMatch: 'full'},
-            {path: 'menu', component: MenuComponent},
-            {path: 'reviews', component: ReviewsComponent}
-        ]
-    },
-    {path: 'order', component: OrderComponent},
-    {path: 'about', component: AboutComponent}
+	{path: '', component: HomeComponent},
+	{path: 'restaurants', component: RestaurantsComponent},
+	{
+		path: 'restaurants/:id', component: RestaurantDetailComponent,
+		children: [
+			{path: '', redirectTo: 'menu', pathMatch: 'full'},
+			{path: 'menu', component: MenuComponent},
+			{path: 'reviews', component: ReviewsComponent}
+		]
+	},
+	{path: 'order', component: OrderComponent},
+	{path: 'about', component: AboutComponent}
 ];

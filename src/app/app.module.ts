@@ -20,36 +20,38 @@ import {ShoppingCartService} from './services/shopping-cart.service';
 import {OrderComponent} from './components/order/order.component';
 import {FormsModule} from '@angular/forms';
 import {InputComponent} from './components/util/input/input.component';
+import {RadioComponent} from './components/util/radio/radio.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        HomeComponent,
-        AboutComponent,
-        RestaurantsComponent,
-        RestaurantComponent,
-        RestaurantDetailComponent,
-        MenuComponent,
-        ShoppingCartComponent,
-        MenuItemComponent,
-        ReviewsComponent,
-        OrderComponent,
-        InputComponent,
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        FormsModule,
-        RouterModule.forRoot(ROUTES)
-    ],
-    providers: [
-        RestaurantsService,
-        ShoppingCartService,
-        {provide: LOCALE_ID, useValue: 'pt-BR'}
-    ],
-    bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		HomeComponent,
+		AboutComponent,
+		RestaurantsComponent,
+		RestaurantComponent,
+		RestaurantDetailComponent,
+		MenuComponent,
+		ShoppingCartComponent,
+		MenuItemComponent,
+		ReviewsComponent,
+		OrderComponent,
+		InputComponent,
+		RadioComponent,
+	],
+	imports: [
+		BrowserModule,
+		HttpModule,
+		FormsModule,
+		RouterModule.forRoot(ROUTES)
+	],
+	providers: [
+		RestaurantsService,
+		ShoppingCartService,
+		{provide: LOCALE_ID, useValue: 'pt-BR'}
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }
