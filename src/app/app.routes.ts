@@ -1,13 +1,10 @@
 import {Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
-import {AboutComponent} from './components/about/about.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantDetailComponent} from './components/restaurants/restaurant/restaurant-detail/restaurant-detail.component';
 import {MenuComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu.component';
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
-import {OrderComponent} from './components/order/order.component';
 import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
-import {AboutModule} from './modules/about/about.module';
 
 export const ROUTES: Routes = [
 	{path: '', component: HomeComponent},
@@ -20,7 +17,7 @@ export const ROUTES: Routes = [
 			{path: 'reviews', component: ReviewsComponent}
 		]
 	},
-	{path: 'order', component: OrderComponent},
+	{path: 'order', loadChildren: './modules/order/order.module#OrderModule'},
 	{path: 'order-summary', component: OrderSummaryComponent},
-	{path: 'about', loadChildren: './modules/about/about.module#AboutModule' }
+	{path: 'about', loadChildren: './modules/about/about.module#AboutModule'}
 ];

@@ -17,11 +17,10 @@ import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import {ShoppingCartService} from './services/shopping-cart.service';
 import {OrderComponent} from './components/order/order.component';
-import {OrderItemsComponent} from './components/order/order-items/order-items.component';
 import {OrderService} from './services/order.service';
-import {DeliveryCostsComponent} from './components/order/delivery-costs/delivery-costs.component';
 import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
 import {SharedModule} from './modules/shared/shared.module';
+import {OrderModule} from './modules/order/order.module';
 
 
 @NgModule({
@@ -36,16 +35,13 @@ import {SharedModule} from './modules/shared/shared.module';
 		ShoppingCartComponent,
 		MenuItemComponent,
 		ReviewsComponent,
-		OrderComponent,
-		OrderItemsComponent,
-		DeliveryCostsComponent,
 		OrderSummaryComponent,
 	],
 	imports: [
 		BrowserModule,
 		HttpModule,
 		SharedModule,
-		RouterModule.forRoot(ROUTES)
+		RouterModule.forRoot(ROUTES),
 	],
 	providers: [
 		RestaurantsService,
