@@ -383,32 +383,6 @@
         }
       ],
       "id": 1
-    },
-    {
-      "Address": "Vinhas",
-      "number": "100",
-      "optionalAddress": "",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "cup-cake"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "Address": "Setenta e Dois",
-      "number": "126",
-      "optionalAddress": "",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "cup-cake"
-        }
-      ],
-      "id": 3
     }
   ]
 }
