@@ -33,7 +33,6 @@ import { RatingComponent } from './components/util/rating/rating.component';
 		AppComponent,
 		HeaderComponent,
 		HomeComponent,
-		AboutComponent,
 		RestaurantsComponent,
 		RestaurantComponent,
 		RestaurantDetailComponent,
