@@ -7,7 +7,6 @@ import {ROUTES} from './app.routes';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {HomeComponent} from './components/home/home.component';
-import {AboutComponent} from './components/about/about.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantComponent} from './components/restaurants/restaurant/restaurant.component';
 import {RestaurantsService} from './services/restaurants.service';
@@ -18,14 +17,11 @@ import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import {ShoppingCartService} from './services/shopping-cart.service';
 import {OrderComponent} from './components/order/order.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {InputComponent} from './components/util/input/input.component';
-import {RadioComponent} from './components/util/radio/radio.component';
 import {OrderItemsComponent} from './components/order/order-items/order-items.component';
 import {OrderService} from './services/order.service';
 import {DeliveryCostsComponent} from './components/order/delivery-costs/delivery-costs.component';
-import { OrderSummaryComponent } from './components/order/order-summary/order-summary.component';
-import { RatingComponent } from './components/util/rating/rating.component';
+import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
+import {SharedModule} from './modules/shared/shared.module';
 
 
 @NgModule({
@@ -41,18 +37,14 @@ import { RatingComponent } from './components/util/rating/rating.component';
 		MenuItemComponent,
 		ReviewsComponent,
 		OrderComponent,
-		InputComponent,
-		RadioComponent,
 		OrderItemsComponent,
 		DeliveryCostsComponent,
 		OrderSummaryComponent,
-		RatingComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpModule,
-		FormsModule,
-		ReactiveFormsModule,
+		SharedModule,
 		RouterModule.forRoot(ROUTES)
 	],
 	providers: [
