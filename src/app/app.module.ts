@@ -9,18 +9,14 @@ import {HeaderComponent} from './components/header/header.component';
 import {HomeComponent} from './components/home/home.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantComponent} from './components/restaurants/restaurant/restaurant.component';
-import {RestaurantsService} from './services/restaurants.service';
 import {RestaurantDetailComponent} from './components/restaurants/restaurant/restaurant-detail/restaurant-detail.component';
 import {MenuComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu.component';
 import {ShoppingCartComponent} from './components/restaurants/restaurant/restaurant-detail/shopping-cart/shopping-cart.component';
 import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
-import {ShoppingCartService} from './services/shopping-cart.service';
-import {OrderComponent} from './components/order/order.component';
-import {OrderService} from './services/order.service';
 import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
 import {SharedModule} from './modules/shared/shared.module';
-import {OrderModule} from './modules/order/order.module';
+import {CoreModule} from './modules/core/core.module';
 
 
 @NgModule({
@@ -41,14 +37,10 @@ import {OrderModule} from './modules/order/order.module';
 		BrowserModule,
 		HttpModule,
 		SharedModule,
+		CoreModule,
 		RouterModule.forRoot(ROUTES),
 	],
-	providers: [
-		RestaurantsService,
-		ShoppingCartService,
-		OrderService,
-		{provide: LOCALE_ID, useValue: 'pt-BR'}
-	],
+	providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
 	bootstrap: [AppComponent]
 })
 export class AppModule {
