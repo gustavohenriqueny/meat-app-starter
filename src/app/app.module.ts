@@ -31,7 +31,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 		ShoppingCartComponent,
 		MenuItemComponent,
 		ReviewsComponent,
-		OrderSummaryComponent,
+		OrderSummaryComponent
 	],
 	imports: [
 		BrowserModule,

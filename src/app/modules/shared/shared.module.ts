@@ -7,11 +7,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {RestaurantsService} from '../../services/restaurants.service';
 import {OrderService} from '../../services/order.service';
+import {SnackbarComponent} from '../../components/util/messages/snackbar/snackbar.component';
 
 @NgModule({
 	imports: [CommonModule, FormsModule, ReactiveFormsModule],
-	exports: [InputComponent, RatingComponent, RadioComponent, FormsModule, ReactiveFormsModule, CommonModule],
-	declarations: [InputComponent, RatingComponent, RadioComponent,],
+	exports: [InputComponent, RatingComponent, RadioComponent, FormsModule, ReactiveFormsModule, CommonModule, SnackbarComponent],
+	declarations: [InputComponent, RatingComponent, RadioComponent, SnackbarComponent],
 })
 export class SharedModule {
 	static forRoot(): ModuleWithProviders {
