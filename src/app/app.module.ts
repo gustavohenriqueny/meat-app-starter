@@ -16,7 +16,6 @@ import {MenuItemComponent} from './components/restaurants/restaurant/restaurant-
 import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
 import {SharedModule} from './modules/shared/shared.module';
-import {CoreModule} from './modules/core/core.module';
 
 
 @NgModule({
@@ -36,8 +35,7 @@ import {CoreModule} from './modules/core/core.module';
 	imports: [
 		BrowserModule,
 		HttpModule,
-		SharedModule,
-		CoreModule,
+		SharedModule.forRoot(),
 		RouterModule.forRoot(ROUTES),
 	],
 	providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
