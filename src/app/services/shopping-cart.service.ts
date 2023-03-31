@@ -13,6 +13,7 @@ export class ShoppingCartService {
 
     clear() {
         this.items = [];
+        this.notificationService.notify('O carrinho foi esvaziado.');
     }
 
     addItem(item: MenuItemModel) {
