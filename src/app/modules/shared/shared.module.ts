@@ -8,6 +8,7 @@ import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {RestaurantsService} from '../../services/restaurants.service';
 import {OrderService} from '../../services/order.service';
 import {SnackbarComponent} from '../../components/util/messages/snackbar/snackbar.component';
+import {NotificationService} from '../../services/notification.service';
 
 @NgModule({
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
@@ -18,7 +19,7 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [ShoppingCartService, RestaurantsService, OrderService]
+            providers: [ShoppingCartService, RestaurantsService, OrderService, NotificationService]
         }
     }
 }
