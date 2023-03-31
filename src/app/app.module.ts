@@ -18,6 +18,7 @@ import {OrderSummaryComponent} from './components/order/order-summary/order-summ
 import {SharedModule} from './modules/shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
         SharedModule.forRoot(),
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     ],
-    providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},{provide: LOCALE_ID, useValue: 'pt-BR'}],
     bootstrap: [AppComponent]
 })
 export class AppModule {
