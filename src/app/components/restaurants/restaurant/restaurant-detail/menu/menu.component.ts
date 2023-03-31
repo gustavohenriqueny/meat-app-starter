@@ -5,22 +5,22 @@ import {Observable} from 'rxjs';
 import {MenuItemModel} from '../../../../../models/menu-item.model';
 
 @Component({
-	selector: 'mt-menu',
-	templateUrl: './menu.component.html'
+    selector: 'mt-menu',
+    templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 
-	menu: Observable<MenuItemModel[]>
+    menu: Observable<MenuItemModel[]>
 
-	constructor(private restaurantService: RestaurantsService, private route: ActivatedRoute) {
-	}
+    constructor(private restaurantService: RestaurantsService, private route: ActivatedRoute) {
+    }
 
-	ngOnInit() {
-		this.menu = this.restaurantService.menuOfRestaurant(this.route.parent.snapshot.params['id']);
-	}
+    ngOnInit() {
+        this.menu = this.restaurantService.menuOfRestaurant(this.route.parent.snapshot.params['id']);
+    }
 
-	addMenuItem(item: MenuItemModel) {
-		console.log(item);
-	}
+    addMenuItem(item: MenuItemModel) {
+        console.log(item);
+    }
 
 }

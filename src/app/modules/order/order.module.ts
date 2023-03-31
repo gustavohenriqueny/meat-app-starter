@@ -7,12 +7,12 @@ import {RouterModule, Routes} from '@angular/router';
 
 
 const ROUTES: Routes = [
-	{path: '', component: OrderComponent}
+    {path: '', component: OrderComponent}
 ];
 
 @NgModule({
-	imports: [SharedModule, RouterModule.forChild(ROUTES)],
-	declarations: [OrderComponent, OrderItemsComponent, DeliveryCostsComponent]
+    imports: [SharedModule, RouterModule.forChild(ROUTES)],
+    declarations: [OrderComponent, OrderItemsComponent, DeliveryCostsComponent]
 })
 export class OrderModule {
 }

@@ -20,28 +20,28 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HeaderComponent,
-		HomeComponent,
-		RestaurantsComponent,
-		RestaurantComponent,
-		RestaurantDetailComponent,
-		MenuComponent,
-		ShoppingCartComponent,
-		MenuItemComponent,
-		ReviewsComponent,
-		OrderSummaryComponent
-	],
-	imports: [
-		BrowserModule,
-		BrowserAnimationsModule,
-		HttpModule,
-		SharedModule.forRoot(),
-		RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-	],
-	providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
-	bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        RestaurantsComponent,
+        RestaurantComponent,
+        RestaurantDetailComponent,
+        MenuComponent,
+        ShoppingCartComponent,
+        MenuItemComponent,
+        ReviewsComponent,
+        OrderSummaryComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpModule,
+        SharedModule.forRoot(),
+        RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
+    ],
+    providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
