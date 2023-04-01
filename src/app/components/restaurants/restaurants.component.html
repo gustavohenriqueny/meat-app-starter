@@ -1,8 +1,10 @@
-<section class="content-header" style="display: flex; justify-content: space-between; align-items: center;">
+<section class="content-header" style="display: flex; justify-content: space-between; align-items: center; padding: 1vh; min-height: 10vh">
     <h1>Todos os Restaurantes</h1>
     <div style="display: flex; align-items: center">
-        <input type="text" class="form-control" placeholder="O que você está procurando" style="margin-right: 2vh">
-        <a class="search-link pull-right"><i class="fa fa-search"></i></a>
+        <div [@toggleSearch]="searchBarState" class=" search-bar">
+            <input type="text" class="form-control" placeholder="O que você está procurando">
+        </div>
+        <a class="search-link pull-right" (click)="toggleSearch()"><i class="fa fa-search"></i></a>
     </div>
 </section>
 

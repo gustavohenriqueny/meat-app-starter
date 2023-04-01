@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RestaurantModel} from '../../models/restaurant.model';
 import {RestaurantsService} from '../../services/restaurants.service';
-import {state, style, trigger} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
     selector: 'mt-restaurants',
@@ -9,15 +9,22 @@ import {state, style, trigger} from '@angular/animations';
     animations: [
         trigger('toggleSearch', [
             state('hidden', style({
-                opacity: 0, 
-                "max-height": "0px"
+                opacity: 0,
+                'width': '0',
+                'display': 'none'
             })),
-            state('visible', style({})),
+            state('visible', style({
+                opacity: 1,
+                'display' : 'block',
+                'width': '250px'
+            })),
+            transition('* => *', animate('250ms 0s ease-in-out'))
         ])
     ]
 })
 export class RestaurantsComponent implements OnInit {
 
+    searchBarState = 'hidden';
     restaurants: RestaurantModel[];
 
     constructor(private restaurantService: RestaurantsService) {
@@ -25,6 +32,10 @@ export class RestaurantsComponent implements OnInit {
 
     ngOnInit() {
         this.restaurantService.restaurants().subscribe(restaurants => this.restaurants = restaurants);
+    }
+
+    toggleSearch() {
+        this.searchBarState = this.searchBarState === 'hidden' ? 'visible' : 'hidden';
     }
 
 }
