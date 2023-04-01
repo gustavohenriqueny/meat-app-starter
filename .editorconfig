@@ -6,9 +6,12 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 insert_final_newline = false
-
 trim_trailing_whitespace = false
 max_line_length = 210
+
+[*.json]
+indent_size = 4
+indent_style = space
 
 [*.md]
 max_line_length = off

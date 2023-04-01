@@ -18,7 +18,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class MenuItemComponent implements OnInit {
 
     menuItemState = 'ready';
-    
+
     @Input() menuItem: MenuItemModel;
 
     @Output() add = new EventEmitter();

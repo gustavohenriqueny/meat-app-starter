@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 export class OrderSummaryComponent implements OnInit {
 
     rated: boolean;
-    
+
     constructor() {
     }
 
@@ -17,5 +17,5 @@ export class OrderSummaryComponent implements OnInit {
     rate() {
         this.rated = true;
     }
-    
+
 }
