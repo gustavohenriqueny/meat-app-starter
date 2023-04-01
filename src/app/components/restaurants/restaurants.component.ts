@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RestaurantModel} from '../../models/restaurant.model';
 import {RestaurantsService} from '../../services/restaurants.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'mt-restaurants',
@@ -15,7 +16,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
             })),
             state('visible', style({
                 opacity: 1,
-                'display' : 'block',
+                'display': 'block',
                 'width': '250px'
             })),
             transition('* => *', animate('250ms 0s ease-in-out'))
@@ -26,12 +27,21 @@ export class RestaurantsComponent implements OnInit {
 
     searchBarState = 'hidden';
     restaurants: RestaurantModel[];
+    searchForm: FormGroup;
+    searchControl: FormControl;
 
-    constructor(private restaurantService: RestaurantsService) {
+    constructor(private restaurantService: RestaurantsService, private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
         this.restaurantService.restaurants().subscribe(restaurants => this.restaurants = restaurants);
+        this.searchControl = this.formBuilder.control('');
+        this.searchForm = this.formBuilder.group({
+            searchControl: this.searchControl
+        })
+        this.searchControl.valueChanges.switchMap(searchTerm =>
+            this.restaurantService.restaurants(searchTerm))
+            .subscribe(restaurants => this.restaurants = restaurants);
     }
 
     toggleSearch() {
