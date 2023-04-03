@@ -3,16 +3,19 @@ import {NotificationService} from './notification.service';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MEAT_API} from 'app/app.api';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Injectable()
 export class LoginService {
 
     user: any;
+    lastUrl: string;
 
     constructor(private notificationService: NotificationService,
                 private router: Router,
                 private http: HttpClient) {
+        this.router.events.filter(e => e instanceof NavigationEnd)
+            .subscribe((e: NavigationEnd) => this.lastUrl = e.url);
     }
 
     login(email: string, password: string): Observable<any> {
@@ -24,7 +27,11 @@ export class LoginService {
         return this.user !== undefined;
     }
 
-    handleLogin(path?: string) {
+    handleLogin(path: string = this.lastUrl) {
         this.router.navigate(['/login', path]);
+    }
+
+    logout() {
+        this.user = undefined;
     }
 }
