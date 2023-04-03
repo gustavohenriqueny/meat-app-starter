@@ -18,7 +18,7 @@ import {SharedModule} from './modules/shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
-import { LoginComponent } from './security/login/login.component';
+import {LoginComponent} from './security/login/login.component';
 
 
 @NgModule({
