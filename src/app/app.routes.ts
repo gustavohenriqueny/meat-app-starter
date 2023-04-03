@@ -7,10 +7,12 @@ import {ReviewsComponent} from './components/restaurants/restaurant/restaurant-d
 import {OrderSummaryComponent} from './components/order/order-summary/order-summary.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {LoginComponent} from './security/login/login.component';
+import {LoggedinService} from './services/loggedin.service';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'restaurants', component: RestaurantsComponent},
+    {path: 'login/:to', component: LoginComponent},
+    {path: 'login', component: LoginComponent},
     {
         path: 'restaurants/:id',
         component: RestaurantDetailComponent,
@@ -20,9 +22,12 @@ export const ROUTES: Routes = [
             {path: 'reviews', component: ReviewsComponent},
         ],
     },
-    {path: 'order', loadChildren: './modules/order/order.module#OrderModule'},
+    {path: 'restaurants', component: RestaurantsComponent},
+    {
+        path: 'order', loadChildren: './modules/order/order.module#OrderModule',
+        canLoad: [LoggedinService]
+    },
     {path: 'order-summary', component: OrderSummaryComponent},
     {path: 'about', loadChildren: './modules/about/about.module#AboutModule'},
-    {path: 'login', component: LoginComponent},
     {path: '**', component: NotFoundComponent},
 ];
