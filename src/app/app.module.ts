@@ -17,8 +17,8 @@ import {OrderSummaryComponent} from './components/order/order-summary/order-summ
 import {SharedModule} from './modules/shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NotFoundComponent} from './not-found/not-found.component';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './security/login/login.component';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
         MenuItemComponent,
         ReviewsComponent,
         OrderSummaryComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
@@ -43,7 +44,7 @@ import {HttpClientModule} from '@angular/common/http';
         SharedModule.forRoot(),
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+    providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
     bootstrap: [AppComponent]
 })
 export class AppModule {
