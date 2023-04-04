@@ -21,6 +21,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './security/login/login.component';
 import {UserDetailComponent} from './components/header/user-detail/user-detail.component';
 import {ApplicationErrorHandler} from './app.error-handler';
+import {registerLocaleData} from '@angular/common';
+import localePt from '@angular/common/locales/pt'
+
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
     declarations: [
@@ -47,7 +51,7 @@ import {ApplicationErrorHandler} from './app.error-handler';
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     ],
     providers: [
-        {provide: LOCALE_ID, useValue: 'pt-BR'},
+        {provide: LOCALE_ID, useValue: 'pt'},
         {provide: ErrorHandler, useClass: ApplicationErrorHandler}
     ],
     bootstrap: [AppComponent]
