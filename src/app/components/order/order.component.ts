@@ -4,7 +4,7 @@ import {OrderService} from '../../services/order.service';
 import {CartItemModel} from '../../models/cart-item.model';
 import {OrderItem, OrderModel} from '../../models/order.model';
 import {Router} from '@angular/router';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'mt-order',
@@ -40,15 +40,17 @@ export class OrderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.orderForm = this.formBuilder.group({
-            name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+        this.orderForm = new FormGroup({
+            name: new FormControl('', {
+                validators: [Validators.required, Validators.minLength(5)],
+            }),
             email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
             emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
             address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
             number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPatter)]),
             optionalAddress: this.formBuilder.control(''),
             paymentOption: this.formBuilder.control('', Validators.required)
-        }, {validator: OrderComponent.equalsTo});
+        }, {validators: [OrderComponent.equalsTo], updateOn: 'blur'});
     }
 
     itemsValue(): number {

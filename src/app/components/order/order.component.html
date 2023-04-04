@@ -19,21 +19,25 @@
                         <p class="lead">Seus Dados:</p>
                     </div>
                     <div class="col-xs-12 col-sm-3">
-                        <span *ngIf="orderForm.hasError('emailsNotMatch')" class="help-block pull-right has-error-block"><i class="fa fa-remove"></i> Emails não conferem.</span>
+                        <span *ngIf="orderForm.hasError('emailsNotMatch')"
+                              class="help-block pull-right has-error-block"><i class="fa fa-remove"></i> Emails não conferem.</span>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <mt-input errorMessage="Campo obrigatorio e com 5 caracteres" label="Nome">
-                            <input autocomplete="off" class="form-control" formControlName="name" placeholder="Nome" type="text">
+                        <mt-input [showTip]="true" errorMessage="Campo obrigatorio e com 5 caracteres" label="Nome">
+                            <input autocomplete="off" class="form-control" formControlName="name" placeholder="Nome"
+                                   type="text">
                         </mt-input>
                     </div>
                     <div class="col-sm-3 col-xs-6">
-                        <mt-input errorMessage="Email invalido!" label="E-mail">
-                            <input autocomplete="off" class="form-control" formControlName="email" placeholder="E-mail" type="text">
+                        <mt-input [showTip]="true" errorMessage="Email invalido!" label="E-mail">
+                            <input autocomplete="off" class="form-control" formControlName="email" placeholder="E-mail"
+                                   type="text">
                         </mt-input>
                     </div>
                     <div class="col-sm-3 col-xs-6">
-                        <mt-input errorMessage="Email invalido!" label="E-mail">
-                            <input autocomplete="off" class="form-control" formControlName="emailConfirmation" placeholder="Configrmação do E-mail" type="text">
+                        <mt-input [showTip]="true" errorMessage="Email invalido!" label="E-mail">
+                            <input autocomplete="off" class="form-control" formControlName="emailConfirmation"
+                                   placeholder="Configrmação do E-mail" type="text">
                         </mt-input>
                     </div>
                 </div>
@@ -44,18 +48,21 @@
                         <p class="lead">Endereço de Entrega:</p>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <mt-input errorMessage="Campo obrigatorio e com 5 caracteres" label="Endereço">
-                            <input autocomplete="off" class="form-control" formControlName="address" minlength="5" placeholder="Endereço" type="text">
+                        <mt-input [showTip]="true" errorMessage="Campo obrigatorio e com 5 caracteres" label="Endereço">
+                            <input autocomplete="off" class="form-control" formControlName="address" minlength="5"
+                                   placeholder="Endereço" type="text">
                         </mt-input>
                     </div>
                     <div class="col-sm-3 col-xs-6">
-                        <mt-input errorMessage="Obrigatório e somente números!">
-                            <input autocomplete="off" class="form-control" formControlName="number" placeholder="Número" type="text">
+                        <mt-input [showTip]="true" errorMessage="Obrigatório e somente números!">
+                            <input autocomplete="off" class="form-control" formControlName="number" placeholder="Número"
+                                   type="text">
                         </mt-input>
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <mt-input>
-                            <input autocomplete="off" class="form-control" formControlName="optionalAddress" placeholder="Complemento" type="text">
+                            <input autocomplete="off" class="form-control" formControlName="optionalAddress"
+                                   placeholder="Complemento" type="text">
                         </mt-input>
 
                     </div>
