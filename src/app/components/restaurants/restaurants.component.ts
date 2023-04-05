@@ -3,9 +3,8 @@ import {RestaurantModel} from '../../models/restaurant.model';
 import {RestaurantsService} from '../../services/restaurants.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import 'rxjs-compat/add/observable/from';
+import {catchError, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {from} from 'rxjs';
 
 @Component({
     selector: 'mt-restaurants',
@@ -33,7 +32,8 @@ export class RestaurantsComponent implements OnInit {
     searchForm: FormGroup;
     searchControl: FormControl;
 
-    constructor(private restaurantService: RestaurantsService, private formBuilder: FormBuilder) {
+    constructor(private restaurantService: RestaurantsService,
+                private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
@@ -43,11 +43,14 @@ export class RestaurantsComponent implements OnInit {
             searchControl: this.searchControl
         })
         this.searchControl.valueChanges
-            .pipe(debounceTime(500),
+            .pipe(
+                debounceTime(500),
                 distinctUntilChanged(),
-                switchMap(searchTerm => this.restaurantService.restaurants(searchTerm)
-                    .catch(error => Observable.from([]))))
-            .subscribe(restaurants => this.restaurants = restaurants);
+                switchMap(searchTerm =>
+                    this.restaurantService
+                        .restaurants(searchTerm)
+                        .pipe(catchError(error => from([]))))
+            ).subscribe(restaurants => this.restaurants = restaurants);
     }
 
     toggleSearch() {

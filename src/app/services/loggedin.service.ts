@@ -18,12 +18,10 @@ export class LoggedinService implements CanLoad, CanActivate {
     }
 
     canLoad(route: Route): boolean {
-        console.log('canload')
         return this.checkAuthentication(route.path);
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        console.log('canactivate')
         return this.checkAuthentication(route.routeConfig.path);
     }
 
